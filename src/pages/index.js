@@ -80,13 +80,13 @@ const App = () => {
       return;
     }
 
-    const { drawContributions } = await import("github-contributions-canvas");
+    const { drawContributions } = await import("../libs/github-contributions-canvas");
 
     drawContributions(canvasRef.current, {
       data,
       username: username,
       themeName: theme,
-      footerText: "Made by @sallar & friends - github-contributions.vercel.app"
+      footerText: "Fetched using command line <p4 changes -u>",
     });
     contentRef.current.scrollIntoView({
       behavior: "smooth"
@@ -171,7 +171,7 @@ const App = () => {
       <form onSubmit={handleSubmit}>
         <input
           ref={inputRef}
-          placeholder="Your GitHub Username"
+          placeholder="Your Perforce Username"
           onChange={(e) => setUsername(e.target.value)}
           value={username}
           id="username"
@@ -213,9 +213,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <div className="App-logo">
-          <img src="/topguntocat.png" width={200} alt="Topguntocat" />
-          <h1>GitHub Contributions Chart Generator</h1>
-          <h4>All your contributions in one image!</h4>
+          <h4>Perforce Changes Chart Generator</h4>
         </div>
         {_renderForm()}
         <ThemeSelector

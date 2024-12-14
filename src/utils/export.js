@@ -41,8 +41,8 @@ export async function share(canvas) {
     canvas.toBlob(async (blob) => {
       navigator
         .share({
-          title: "GitHub Contributions",
-          text: "Check out my #GitHubContributions history over time. A free tool by @sallar and friends. https://github-contributions.vercel.app",
+          title: "Perforce Changes",
+          text: "Check out my #PerforceChanges history over time.",
           files: [
             new File([blob], "contributions.png", {
               type: blob.type
@@ -81,5 +81,5 @@ export async function copyToClipboard(canvas) {
 }
 
 export function cleanUsername(username) {
-  return username.replace(/^(http|https):\/\/(?!www\.)github\.com\//, "");
+  return username;
 }

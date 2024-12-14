@@ -1,7 +1,7 @@
 :root {
   --bg: #fff;
   --header-bg: #f4f5f6;
-  --button-bg: #9b4dca;
+  --button-bg: rgb(11, 181, 241);
   --button-disabled: #cfd0d4;
   --button-disabled-border: #cfd0d4;
   --button-text: #fff;
