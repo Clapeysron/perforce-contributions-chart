@@ -94,7 +94,7 @@ async function fetchDataForYear(url, year, format) {
       const contributions = daysInYear.map(date => {
         const dateStr = date.toISOString().split('T')[0];
         const count = dailyContributions.get(dateStr) || 0;
-        const intensity = Math.min(Math.floor(count / 2), 4);
+        const intensity = Math.min(Math.floor((count + 1) / 2), 4);
         
         return {
           date: dateStr,
